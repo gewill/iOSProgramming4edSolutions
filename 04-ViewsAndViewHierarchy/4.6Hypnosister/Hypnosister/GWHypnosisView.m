@@ -50,6 +50,18 @@
     [[UIColor lightGrayColor] setStroke];
     
     [path stroke];
+    
+    
+    
+    
+    // 添加logo，中心点为屏幕中心点
+    CGRect logoFrame = CGRectMake(center.x - bounds.size.width / 4,  center.y - bounds.size.height / 4, bounds.size.width / 4 * 2, bounds.size.height / 4 * 2);
+    UIImage *logoimage = [UIImage imageNamed:@"logo.png"];
+    [logoimage drawInRect:logoFrame];
+    UIView *logoView = [[UIView alloc]initWithFrame:logoFrame];
+    [self.window addSubview:logoView];
+    
+    
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -58,6 +70,7 @@
     if (self) {
         // 设置 GWHypnosisView 对象的背景色为透明
         self.backgroundColor = [UIColor clearColor];
+        
     }
     return self;
 }
