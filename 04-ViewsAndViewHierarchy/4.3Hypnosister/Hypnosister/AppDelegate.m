@@ -17,15 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    CGRect firstFrame = self.window.bounds;
     
+    CGRect firstFrame = CGRectMake(160, 240, 100, 150);
     GWHypnosisView *firstView = [[GWHypnosisView alloc] initWithFrame:firstFrame];
-    [firstView removeFromSuperview];
-    
+    firstView.backgroundColor = [UIColor redColor];
     [self.window addSubview:firstView];
+    
+    CGRect secondFrame = CGRectMake(20, 30, 50, 50);
+    GWHypnosisView *secondView = [[GWHypnosisView alloc] initWithFrame:secondFrame];
+    secondView.backgroundColor = [UIColor blueColor];
+//    [self.window addSubview:secondView];
+    [firstView addSubview:secondView];
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
